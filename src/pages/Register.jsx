@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { IoEyeOffOutline,IoEyeOutline } from "react-icons/io5";
-
-
-
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -62,14 +60,29 @@ const Register = () => {
                   className="input input-bordered w-full"
                   required
                 />
-                <span className="absolute top-4 right-3" onClick={() => setShowPassword(!showPassword)}>{showPassword ?  <IoEyeOutline></IoEyeOutline> 
-: <IoEyeOffOutline />}</span>
+                <span
+                  className="absolute top-4 right-3"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <IoEyeOutline></IoEyeOutline>
+                  ) : (
+                    <IoEyeOffOutline />
+                  )}
+                </span>
               </div>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
           </form>
+          <p className="text-center mb-4">
+            Already Have An Account ?
+             <Link to="/login" className="font-medium text-red-500">
+    
+              Login
+            </Link>
+          </p>
         </div>
       </div>
     </div>

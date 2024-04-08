@@ -1,6 +1,11 @@
+import { useState } from "react";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
+
+  const [showPassword,setShowPassword] = useState(false)
     return (
         <div className="hero ">
         <div className="hero-content flex-col w-full">
@@ -21,13 +26,21 @@ const Login = () => {
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="password" placeholder="Password" name="password" className="input input-bordered" required />
+               <div className="w-full relative">
+               <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" className="input input-bordered w-full" required />
+               <span className="absolute top-4 right-3" onClick={()=> setShowPassword(!showPassword)}>
+ {
+  showPassword ? <IoEyeOutline></IoEyeOutline> :  <IoEyeOffOutline></IoEyeOffOutline> 
+ }
+               </span>
+               </div>
         
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
+            <p className="text-center mb-4">Dont’t Have An Account ?<Link to='/register' className="font-medium text-red-500"> Register</Link></p>
           </div>
         </div>
       </div>
