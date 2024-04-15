@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 
 const Navber = () => {
@@ -76,6 +76,7 @@ const Navber = () => {
           </Link>
         )} */}
         <button>login</button>
+    <Link to='/register'>    <button className="btn ml-5 sm:block hidden" >Sign up</button></Link>
       </div>
     </div>
   );

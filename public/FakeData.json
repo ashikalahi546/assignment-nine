@@ -1,0 +1,47 @@
+[
+    {
+      "estate_card": {
+        "image": "https://i.ibb.co/djv6r1W/image.jpg",
+        "estate_title": "Luxury Villa",
+        "id": 1,
+        "segment_name": "Residential",
+        "description": "A beautiful luxury villa with stunning views",
+        "price": 1000000,
+        "status": "sale"
+      }
+    },
+    {
+      "estate_card": {
+        "image": "https://i.ibb.co/JQbwxH2/image1.jpg",
+        "estate_title": "Beachfront Condo",
+        "id": 2,
+        "segment_name": "Vacation Rentals",
+        "description": "Cozy condo right by the beach",
+        "price": 2000,
+        "status": "rent"
+      }
+    },
+    {
+      "estate_card": {
+        "image": "https://i.ibb.co/FKzqvXQ/Rectangle-7.png",
+        "estate_title": "City Apartment",
+        "id": 3,
+        "segment_name": "Residential",
+        "description": "Modern apartment in the heart of the city",
+        "price": 500000,
+        "status": "sale"
+      }
+    },
+    {
+      "estate_card": {
+        "image": "https://i.ibb.co/SVhmS4G/Rectangle-7-1.png",
+        "estate_title": "Mountain Cabin",
+        "id": 4,
+        "segment_name": "Vacation Rentals",
+        "description": "Rustic cabin nestled in the mountains",
+        "price": 1500,
+        "status": "rent"
+      }
+    }
+  ]
+  

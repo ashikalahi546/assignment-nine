@@ -40,7 +40,7 @@ registerUser(email,password)
 })
  }
   return (
-    <div className="hero mt-5 ">
+    <div className="hero mt-0 ">
       <div className="hero-content flex-col w-full">
  
         <div className="card shrink-0 lg:w-5/12 sm:w-7/12 w-10/12  shadow-2xl bg-base-100">

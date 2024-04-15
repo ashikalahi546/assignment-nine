@@ -1,5 +1,5 @@
 import Hero from "../pages/Hero";
-import Cart from "../pages/cart/Cart";
+import Carts from "../pages/cart/Carts";
 
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
         <div>
             
             <Hero></Hero>
-            <Cart></Cart>
+            <Carts></Carts>
 
         </div>
     );
