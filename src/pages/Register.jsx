@@ -1,17 +1,51 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../components/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const {registerUser,setUser} = useContext(AuthContext);
+  const [error,setError]=useState('');
+  const [emailError,setEmailError] = useState('')
+ const handleRegister = e => {
+  e.preventDefault()
+  const name = e.target.name.value;
+  const photo = e.target.photo.value;
+  const email = e.target.email.value;
+  const password = e.target.password.value;
+  if(!/@gmail\.com$/.test(email)){
+    setEmailError('Email must be end with @gmail.com');
+    return;
+  }
+
+if(password.length < 6){
+  setError('password must be 6 characters')
+}
+// if(!/(?=.*[A-Z])(?=.*[a-z]).+$/.test(password)){
+//   setError.toast('dsdsjhd');
+//   return
+// }
+setEmailError('')
+setError('')
+
+console.log(name,photo,email,password)
+registerUser(email,password)
+.then(result => {
+ setUser(result.user)
+}).catch(error => {
+ setError(error.message)
+})
+ }
   return (
-    <div className="hero ">
+    <div className="hero mt-5 ">
       <div className="hero-content flex-col w-full">
-        <div className="text-center ">
-          <h1 className="text-4xl font-bold mt-10">Register now!</h1>
-        </div>
-        <div className="card shrink-0 w-5/12  shadow-2xl bg-base-100">
-          <form className="card-body ">
+ 
+        <div className="card shrink-0 lg:w-5/12 sm:w-7/12 w-10/12  shadow-2xl bg-base-100">
+        <h1 className="sm:text-3xl text-2xl font-bold  mt-5 text-center">Register now!</h1>
+          <form onSubmit={handleRegister} className="card-body ">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -47,6 +81,11 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
+              <div className="text-red-500 mt-2">
+                {
+                  emailError && <p>{emailError}</p>
+                }
+              </div>
             </div>
             <div className="form-control">
               <label className="label">
@@ -71,6 +110,11 @@ const Register = () => {
                   )}
                 </span>
               </div>
+         <div className="text-red-500">
+         {
+                error && <p>{error}</p>
+              }
+         </div>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>

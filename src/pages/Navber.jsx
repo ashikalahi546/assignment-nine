@@ -1,18 +1,35 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../components/AuthProvider";
 
 const Navber = () => {
+  const {user} = useContext(AuthContext)
+  // const { user, logOut } = useContext(AuthContext);
+
+  // const handleLogOut = () => {
+  //   logOut()
+  //     .then((result) => {
+  //       console.log(result.user);
+  //     })
+  //     .cacth((error) => {
+  //       console.error(error);
+  //     });
+  // }
+  
+  console.log(user)
   const links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
+      
+      <li>
+        <NavLink to="/about">Update Profile</NavLink>
+      </li>
       <li>
         <NavLink to="/login">Login</NavLink>
       </li>
 
-      <li>
-        <NavLink to="/about">About</NavLink>
-      </li>
     </>
   );
   return (
@@ -37,18 +54,28 @@ const Navber = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-28"
           >
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-2xl "><span className="text-blue-600">Dream</span> House</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul className="menu menu-horizontal px-1 ">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+      {/* {
+        user && user?.email
+      } */}
+      {/* {user ? (
+          <Link onClick={handleLogOut} className="btn ">sing Out</Link>
+        ) : (
+          <Link to="/login" className="btn ">
+            Login
+          </Link>
+        )} */}
+        <button>login</button>
       </div>
     </div>
   );
