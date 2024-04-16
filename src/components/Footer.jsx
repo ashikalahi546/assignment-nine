@@ -2,10 +2,10 @@ import { FaStar } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-5 gap-8 mt-[83px] py-10 ">
+    <div className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-5 gap-8 mt-14 py-10 ">
       <div className="space-y-3 text-white">
         <h2 className="text-2xl font-medium">
-          <span className="text-blue-600 ">Dream </span>House
+          <span className="text-blue-600 ">Dream</span>House
         </h2>
         <p>
           Dream House Real Estate Brokerage is a full-service real estate firm

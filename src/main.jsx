@@ -9,6 +9,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Error from "./error/Error.jsx";
 import AuthProvider from "./components/AuthProvider.jsx";
+import CartDetails from "./pages/cart/CartDetails.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path:'/cart/:id',
+        element:<CartDetails></CartDetails>
+      }
     ],
   },
 ]);

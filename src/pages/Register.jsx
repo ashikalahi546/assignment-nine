@@ -9,8 +9,9 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const {registerUser,setUser} = useContext(AuthContext);
   const [error,setError]=useState('');
-  const [emailError,setEmailError] = useState('')
- const handleRegister = e => {
+  const [emailError,setEmailError] = useState('');
+const [success,setSuccess] = useState('');
+  const handleRegister = e => {
   e.preventDefault()
   const name = e.target.name.value;
   const photo = e.target.photo.value;

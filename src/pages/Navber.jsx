@@ -3,33 +3,29 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 
 const Navber = () => {
-  const {user} = useContext(AuthContext)
-  // const { user, logOut } = useContext(AuthContext);
-
-  // const handleLogOut = () => {
-  //   logOut()
-  //     .then((result) => {
-  //       console.log(result.user);
-  //     })
-  //     .cacth((error) => {
-  //       console.error(error);
-  //     });
-  // }
-  
-  console.log(user)
+  const { user,logOut } = useContext(AuthContext);
+const handleSingOut = ()=>{
+  logOut()
+  .then((result) => {
+    console.log(result.user);
+  })
+  .catch((error) => {
+    console.error(error.message);
+  });
+}
+  // console.log(user);
   const links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      
+
       <li>
         <NavLink to="/about">Update Profile</NavLink>
       </li>
       <li>
         <NavLink to="/login">Login</NavLink>
       </li>
-
     </>
   );
   return (
@@ -59,24 +55,24 @@ const Navber = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl "><span className="text-blue-600">Dream</span> House</a>
+        <a className="btn btn-ghost gap-0 md:text-2xl text-lg ">
+          <span className="text-blue-600">Dream</span>House
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 ">{links}</ul>
       </div>
       <div className="navbar-end">
-      {/* {
-        user && user?.email
-      } */}
-      {/* {user ? (
-          <Link onClick={handleLogOut} className="btn ">sing Out</Link>
+      <img className="size-10" src="/user2.png" alt="" />
+        {user ? (
+          <button onClick={handleSingOut} className="btn ml-5 sm:block hidden">Sign Out</button>
         ) : (
-          <Link to="/login" className="btn ">
-            Login
-          </Link>
-        )} */}
-        <button>login</button>
-    <Link to='/register'>    <button className="btn ml-5 sm:block hidden" >Sign up</button></Link>
+      
+          <button className="btn ml-5 sm:block hidden">Login</button>
+        )}
+        {/* <Link to="/register">
+          <button className="btn ml-5 sm:block hidden">Sign up</button>
+        </Link> */}
       </div>
     </div>
   );
