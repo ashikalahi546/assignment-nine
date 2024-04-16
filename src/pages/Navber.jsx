@@ -21,7 +21,7 @@ const handleSingOut = ()=>{
       </li>
 
       <li>
-        <NavLink to="/about">Update Profile</NavLink>
+        <NavLink to="/update profile">Update Profile</NavLink>
       </li>
       <li>
         <NavLink to="/login">Login</NavLink>
@@ -50,7 +50,7 @@ const handleSingOut = ()=>{
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-28"
+            className="menu menu-sm dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-28 "
           >
             {links}
           </ul>
@@ -70,9 +70,8 @@ const handleSingOut = ()=>{
       
           <button className="btn ml-5 sm:block hidden">Login</button>
         )}
-        {/* <Link to="/register">
-          <button className="btn ml-5 sm:block hidden">Sign up</button>
-        </Link> */}
+
+
       </div>
     </div>
   );

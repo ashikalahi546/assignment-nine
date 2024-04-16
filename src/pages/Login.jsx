@@ -7,18 +7,31 @@ import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { loginUser } = useContext(AuthContext);
+  const [error,setError] = useState('');
+  const [emailError,setEmailError] = useState('');
+  const [success,setSuccess] = useState('');
   const handleLogin = (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
     const password = e.target.password.value;
+    if(!/@gmail\.com$/.test(email)){
+      setEmailError('Email must be end with @gmail.com');
+      return
+    }
+    if(password.length < 6){
+      setError('password must be at least 6 character');
+      return
+    }
+    setEmailError('')
+    setError('')
     console.log(email, password);
     loginUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        setSuccess('User logged in successfull',result);
       })
       .catch((error) => {
-        console.error(error.message);
+         setError(error.message);
       });
   };
   return (
@@ -41,6 +54,11 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
+                   <div className="text-red-500 mt-2">
+              {
+                emailError && <p>{emailError}</p>
+                }
+              </div>
               </div>
               <div className="form-control">
                 <label className="label">
@@ -65,6 +83,17 @@ const Login = () => {
                     )}
                   </span>
                 </div>
+              <div className="text-red-500 mt-2">
+              {
+                  error && <p>{error}</p>
+                }
+              </div>
+              <div className="text-green-500 mt-2">
+              {
+                success && <p>{success}</p>
+                }
+              </div>
+           
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
@@ -79,7 +108,7 @@ const Login = () => {
             </p>
           </div>
         </div>
-        <div className="text-2xl  flex items-center  gap-3 justify-center absolute bottom-9 text-blue-600">
+        <div className="text-2xl  flex items-center  gap-3 justify-center absolute bottom-9 text-blue-600 cursor-pointer">
           <FaGoogle></FaGoogle>
           <FaFacebook></FaFacebook>
           <FaGithub></FaGithub>
