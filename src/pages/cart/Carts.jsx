@@ -5,7 +5,7 @@ import Cart from "./Cart";
 const Carts = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("/public/fakeData.json")
+    fetch("/fakeData.json")
       .then((res) => res.json())
       .then((data) => setData(data));
   }, []);
