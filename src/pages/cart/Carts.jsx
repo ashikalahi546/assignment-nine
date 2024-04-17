@@ -17,8 +17,8 @@ const Carts = () => {
           Choice Our<span className="text-blue-600"> Best Deal</span>
         </h2>
         <div className=" grid sm:grid-cols-2 gap-12">
-          {data.map((cart) => (
-            <Cart cart={cart}></Cart>
+          {data?.map((cart,i) => (
+            <Cart cart={cart} key={i}></Cart>
           ))}
         </div>
       </div>

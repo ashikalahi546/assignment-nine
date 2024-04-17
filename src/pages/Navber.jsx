@@ -63,9 +63,12 @@ const handleSingOut = ()=>{
         <ul className="menu menu-horizontal px-1 ">{links}</ul>
       </div>
       <div className="navbar-end">
-      <img className="size-10" src="/user2.png" alt="" />
+     
         {user ? (
+<div className="flex items-center">
+<img className="size-12 rounded-full" src="/user1.jpg" alt="" />
           <button onClick={handleSingOut} className="btn ml-5 sm:block hidden">Sign Out</button>
+</div>
         ) : (
       
           <button className="btn ml-5 sm:block hidden">Login</button>
