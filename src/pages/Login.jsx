@@ -6,10 +6,12 @@ import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser,googleLogin } = useContext(AuthContext);
+  
   const [error,setError] = useState('');
   const [emailError,setEmailError] = useState('');
   const [success,setSuccess] = useState('');
+
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -108,10 +110,10 @@ const Login = () => {
             </p>
           </div>
         </div>
-        <div className="text-2xl  flex items-center  gap-3 justify-center absolute bottom-9 text-blue-600 cursor-pointer">
-          <FaGoogle></FaGoogle>
-          <FaFacebook></FaFacebook>
-          <FaGithub></FaGithub>
+        <div className="text-2xl  flex items-center  gap-3 justify-center absolute bottom-9 text-blue-600 ">
+          <FaGoogle className="cursor-pointer" onClick={()=> googleLogin()}></FaGoogle>
+          <FaFacebook className="cursor-pointer"></FaFacebook>
+          <FaGithub className="cursor-pointer"></FaGithub>
         </div>
       </div>
     </div>

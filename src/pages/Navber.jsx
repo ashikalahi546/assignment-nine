@@ -55,9 +55,9 @@ const handleSingOut = ()=>{
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost gap-0 md:text-2xl text-lg ">
+        <Link to='/' className="btn btn-ghost gap-0 md:text-2xl text-lg ">
           <span className="text-blue-600">Dream</span>House
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 ">{links}</ul>

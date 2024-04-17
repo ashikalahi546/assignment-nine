@@ -10,6 +10,7 @@ import Register from "./pages/Register.jsx";
 import Error from "./error/Error.jsx";
 import AuthProvider from "./components/AuthProvider.jsx";
 import CartDetails from "./pages/cart/CartDetails.jsx";
+import PrivateRoute from "./pages/PrivateRoute.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/cart/:id',
-        element:<CartDetails></CartDetails>
+        element:<PrivateRoute><CartDetails></CartDetails></PrivateRoute>
       }
     ],
   },

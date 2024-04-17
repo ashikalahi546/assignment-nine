@@ -7,7 +7,7 @@
         "segment_name": "Residential",
         "description": "A beautiful luxury villa with stunning views",
         "price": 1000000,
-        "status": "sale"
+        "status": "Sale"
       }
     },
     {
@@ -18,18 +18,18 @@
         "segment_name": "Vacation Rentals",
         "description": "Cozy condo right by the beach",
         "price": 2000,
-        "status": "rent"
+        "status": "Rent"
       }
     },
     {
       "estate_card": {
-        "image": "https://i.ibb.co/FKzqvXQ/Rectangle-7.png",
+        "image": "https://i.ibb.co/9HtGbbm/cart-image.jpg",
         "estate_title": "City Apartment",
         "id": 3,
         "segment_name": "Residential",
         "description": "Modern apartment in the heart of the city",
         "price": 500000,
-        "status": "sale"
+        "status": "Sale"
       }
     },
     {
@@ -40,7 +40,7 @@
         "segment_name": "Vacation Rentals",
         "description": "Rustic cabin nestled in the mountains",
         "price": 1500,
-        "status": "rent"
+        "status": "Rent"
       }
     }
   ]
